@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <link rel="stylesheet" href="nev_bar.css">
+    <link rel="stylesheet" href="footerNew.css">
+    <style>
+        body{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.647)), url("images/basketball.jpg");
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+        }                                                                     
+        .box{
+            height: 100vh;
+        }
+        .loginContainer{
+            margin: auto;
+            width: 80vw;
+            height: 70vh;
+            display: flex;
+            background-color: rgba(255, 107, 107, 0.47);
+            position: relative;
+            border-radius: 50px;
+        }
+        .imageContainer{
+            width: 40vw;
+            height: 70vh;
+        }
+        .imageContainer img{
+            width: 40vw;
+            height: 70vh;
+            object-fit: cover;
+            object-position: center;
+        }
+        .loginBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40vw;
+            height: 70vh;
+            position: relative;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .loginBox h1{
+            position: absolute;
+            top: 10vh;
+            left: 7vw;  
+            margin: 0;
+            color: black;
+            font-size: xx-large;
+        }
+        .loginBox h3{
+            position: absolute;
+            top: 20vh;
+            left: 7vw;
+            margin: 0;
+            color: black;
+        }   
+        .loginBox input{
+            width: 25vw; 
+            margin-top: 5vh; 
+            padding: 10px 15px;  
+            font-size: medium; 
+            border: none;  
+            color: white;
+            border-bottom: 2px solid #ccc;  
+            border-radius: 0; 
+            background-color: transparent; 
+        }
+
+        .loginBox form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .loginBox input:focus {
+            outline: none; 
+            border-bottom: 2px solid rgb(237, 83, 83); 
+        }
+        .loginBox p{
+            margin-top: 25px;
+        }
+        .loginBox button{
+            position: absolute;
+            top: 52vh;
+            padding: 15px 25px;
+            color: white;
+            font-size: large;
+            background-color: black;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+        }
+        .loginBox button:hover{
+            transform: scale(1.1);
+        }
+        .loginBox a{
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="Heart.svg" alt="">
+        </div>
+        <div class="name">
+            <h1>Fitness Tracker</h1>
+        </div>
+        <div class="element">
+            <ul>
+                <li><a href="Home.php">Home</a></li>
+                <li><a href="aboutUS.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="trackYourFitness.html">Track Your Fitness</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="loginContainer">
+            <div class="imageContainer">
+                <img src="images/basketball.jpg" alt="basketballPlayer">
+            </div>
+            <div class="loginBox">
+                <h1>Login</h1>
+                <h3>Let's Get Started</h3>
+                <form id="loginForm" action="LoginCheck.php" method="POST" onsubmit="return validateLogin()">
+                    <input type="text" id="email" name="email" class="inputField" placeholder="Email ID" required>
+                    <input type="password" id="password" name="password" class="inputField" placeholder="Password" required>
+                    <button class="loginButton" type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="signUpPage.html">signup</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-top">
+        <div class="footer-section">
+            <h3>Help</h3>
+            <a href="LoginScreen.html">Log In / Register</a>
+            <a href="privacy.html">Privacy Center</a>
+            <a href="support.html">Support</a>
+            <a href="developer.html">Developer / API</a>
+        </div>
+        <div class="footer-section">
+            <h3>About</h3>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="team.html">Join Our Team</a>
+        </div>
+        <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="https://www.facebook.com">
+                <img src="facebookLogo.svg" alt="Facebook Icon" class="social-icon"> Facebook
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="instagramLogo.svg" alt="Instagram Icon" class="social-icon"> Instagram
+            </a>
+            <a href="https://www.twitter.com">
+                <img src="twitterLogo.svg" alt="Twitter Icon" class="social-icon"> Twitter
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="linkidinLogo.svg" alt="LinkedIn Icon" class="social-icon"> LinkedIn
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="left">
+            <div class="CompanyLogo"><img src="Heart.svg" alt="logo"></div>
+            <div class="rights">©2024 Fitness Tracker®, Inc. All rights reserved</div>
+        </div>
+        <div class="right">
+            <a href="privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+            <a href="terms.html" aria-label="Terms of Use">Terms of Use</a>
+            <a href="cookie.html" aria-label="Cookie Policy">Cookie Policy</a>
+        </div>
+    </footer>
+    <script>
+        function validateLogin() {
+            var email = document.getElementById('email');
+            var password = document.getElementById('password');
+    
+            email.style.borderBottom = '2px solid #ccc';
+            password.style.borderBottom = '2px solid #ccc';
+    
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.(com|in)$/;
+    
+            if (email.value === "" || password.value === "") {
+                if (email.value === "") {
+                    email.style.borderBottom = '2px solid red';
+                }
+                if (password.value === "") {
+                    password.style.borderBottom = '2px solid red';
+                }
+                alert("Please enter both your email and password.");
+                return false;
+            } else if (!emailPattern.test(email.value)) {
+                email.style.borderBottom = '2px solid red';
+                alert("Please enter a valid Gmail address ending with .com or .in.");
+                return false; 
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

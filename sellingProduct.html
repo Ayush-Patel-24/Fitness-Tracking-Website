@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Product</title>
+    <link rel="stylesheet" href="nev_bar.css">
+    <link rel="stylesheet" href="footerNew.css">
+   
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .product-image img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        button{
+            cursor: pointer;
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 20px;
+            color: white;
+        }
+
+        .product-details h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .product-details p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #f8b400;
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            text-align: center;
+            margin: 0 10px;
+            padding: 5px;
+            font-size: 1.1rem;
+        }
+
+        .add-to-cart-btn {
+            font-size: 1.1rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <img src="Heart.svg" alt="Fitness Tracker Logo">
+        </div>
+        <div class="name">
+            <h1>Fitness Tracker</h1>
+        </div>
+        <div class="element">
+            <ul>
+                <li><a href="Home.php">Home</a></li>
+                <li><a href="aboutUS.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="trackYourFitness.html">Track Your Fitness</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="" alt="Fitness Product Image">
+        </div>
+
+        <div class="product-details">
+            <h2>Smart Fitness Band</h2>
+            <div class="product-price">$49.99</div>
+            <p>The Smart Fitness Band helps you track your steps, calories burned, heart rate, and sleep patterns. It’s waterproof and comes with a long-lasting battery.</p>
+
+            <div class="quantity-selector">
+                <label for="quantity" style="font-size:1.1rem;">Quantity:</label>
+                <button onclick="decreaseQuantity()" class="btn btn-light btn-sm">-</button>
+                <input type="number" id="quantity" value="1" min="1" style="font-size:1rem;">
+                <button onclick="increaseQuantity()" class="btn btn-light btn-sm">+</button>
+            </div>
+
+            <button class="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i>Buy Now
+            </button>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="footer-section">
+            <h3>Help</h3>
+            <a href="LoginScreen.html">Log In / Register</a>
+            <a href="privacy.html">Privacy Center</a>
+            <a href="support.html">Support</a>
+            <a href="developer.html">Developer / API</a>
+        </div>
+        <div class="footer-section">
+            <h3>About</h3>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="team.html">Join Our Team</a>
+        </div>
+        <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="https://www.facebook.com">
+                <img src="facebookLogo.svg" alt="Facebook Icon" class="social-icon"> Facebook
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="instagramLogo.svg" alt="Instagram Icon" class="social-icon"> Instagram
+            </a>
+            <a href="https://www.twitter.com">
+                <img src="twitterLogo.svg" alt="Twitter Icon" class="social-icon"> Twitter
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="linkidinLogo.svg" alt="LinkedIn Icon" class="social-icon"> LinkedIn
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="left">
+            <div class="CompanyLogo"><img src="Heart.svg" alt="logo"></div>
+            <div class="rights">©2024 Fitness Tracker®, Inc. All rights reserved</div>
+        </div>
+        <div class="right">
+            <a href="privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+            <a href="terms.html" aria-label="Terms of Use">Terms of Use</a>
+            <a href="cookie.html" aria-label="Cookie Policy">Cookie Policy</a>
+        </div>
+    </footer>
+    <script type="module" src="sellingProduct.js"></script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Product</title>
+    <link rel="stylesheet" href="nev_bar.css">
+    <link rel="stylesheet" href="footerNew.css">
+   
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .product-image img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        button{
+            cursor: pointer;
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 20px;
+            color: white;
+        }
+
+        .product-details h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .product-details p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #f8b400;
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            text-align: center;
+            margin: 0 10px;
+            padding: 5px;
+            font-size: 1.1rem;
+        }
+
+        .add-to-cart-btn {
+            font-size: 1.1rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <img src="Heart.svg" alt="Fitness Tracker Logo">
+        </div>
+        <div class="name">
+            <h1>Fitness Tracker</h1>
+        </div>
+        <div class="element">
+            <ul>
+                <li><a href="Home.php">Home</a></li>
+                <li><a href="aboutUS.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="trackYourFitness.html">Track Your Fitness</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="" alt="Fitness Product Image">
+        </div>
+
+        <div class="product-details">
+            <h2>Smart Fitness Band</h2>
+            <div class="product-price">$49.99</div>
+            <p>The Smart Fitness Band helps you track your steps, calories burned, heart rate, and sleep patterns. It’s waterproof and comes with a long-lasting battery.</p>
+
+            <div class="quantity-selector">
+                <label for="quantity" style="font-size:1.1rem;">Quantity:</label>
+                <button onclick="decreaseQuantity()" class="btn btn-light btn-sm">-</button>
+                <input type="number" id="quantity" value="1" min="1" style="font-size:1rem;">
+                <button onclick="increaseQuantity()" class="btn btn-light btn-sm">+</button>
+            </div>
+
+            <button class="add-to-cart-btn">Add To Cart</button>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="footer-section">
+            <h3>Help</h3>
+            <a href="LoginScreen.html">Log In / Register</a>
+            <a href="privacy.html">Privacy Center</a>
+            <a href="support.html">Support</a>
+            <a href="developer.html">Developer / API</a>
+        </div>
+        <div class="footer-section">
+            <h3>About</h3>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="team.html">Join Our Team</a>
+        </div>
+        <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="https://www.facebook.com">
+                <img src="facebookLogo.svg" alt="Facebook Icon" class="social-icon"> Facebook
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="instagramLogo.svg" alt="Instagram Icon" class="social-icon"> Instagram
+            </a>
+            <a href="https://www.twitter.com">
+                <img src="twitterLogo.svg" alt="Twitter Icon" class="social-icon"> Twitter
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="linkidinLogo.svg" alt="LinkedIn Icon" class="social-icon"> LinkedIn
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="left">
+            <div class="CompanyLogo"><img src="Heart.svg" alt="logo"></div>
+            <div class="rights">©2024 Fitness Tracker®, Inc. All rights reserved</div>
+        </div>
+        <div class="right">
+            <a href="privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+            <a href="terms.html" aria-label="Terms of Use">Terms of Use</a>
+            <a href="cookie.html" aria-label="Cookie Policy">Cookie Policy</a>
+        </div>
+    </footer>
+    <script type="module" src="sellingProduct.js"></script>
+</body>
+</html> -->

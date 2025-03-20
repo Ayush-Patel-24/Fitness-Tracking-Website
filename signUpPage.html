@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Screen</title>
+    <link rel="stylesheet" href="nev_bar.css">
+    <link rel="stylesheet" href="footerNew.css">
+    <style>
+        body{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.647)), url("images/basketball.jpg");
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+        }
+        .box{
+            height: 140vh;
+        }
+        .singupContainer{
+            margin: auto;
+            width: 80vw;
+            height: 120vh;
+            display: flex;
+            background-color: rgba(255, 107, 107, 0.47);
+            position: relative;
+            border-radius: 50px;
+        }
+        .imageContainer{
+            width: 40vw;
+            height: 120vh;
+        }
+        .imageContainer img{
+            width: 40vw;
+            height: 120vh;
+            object-fit: cover;
+            object-position: center;
+        }
+        .signupBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40vw;
+            height: 120vh;
+            position: relative;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .signupBox h1{
+            position: absolute;
+            top: 6vh;
+            left: 7vw;  
+            margin: 0;
+            color: black;
+            font-size: xx-large;
+        }
+        .signupBox h3{
+            position: absolute;
+            top: 15vh;
+            left: 7vw;
+            margin: 0;
+            color: black;
+        }   
+        .signupBox input{
+            width: 25vw; 
+            margin-top: 5vh; 
+            padding: 10px 15px;  
+            font-size: medium; 
+            border: none;  
+            color: white;
+            border-bottom: 2px solid #ccc;  
+            border-radius: 0; 
+            background-color: transparent; 
+        }
+
+        .signupBox input:focus {
+            outline: none; 
+            border-bottom: 2px solid rgb(237, 83, 83); 
+        }
+        .signupBox p{
+            margin-top: 25px;
+        }
+        .signupBox button{
+            position: absolute;
+            top: 105vh;
+            padding: 15px 25px;
+            font-size: large;
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+        }
+        .signupBox button:hover{
+            transform: scale(1.1);
+        }
+
+        .signupBox a{
+            color: wheat;
+        }
+        .signupBox form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .genderSelection {
+            display: flex;
+            align-items: center;
+            width: 25vw;
+            margin-top: 5vh;
+            font-size: medium;
+            background-color: transparent;
+        }
+        
+        .genderSelection label {
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .signupBox input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="Heart.svg" alt="">
+        </div>
+        <div class="name">
+            <h1>Fitness Tracker</h1>
+        </div>
+        <div class="element">
+            <ul>
+                <li><a href="Home.php">Home</a></li>
+                <li> <a href="aboutUS.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="trackYourFitness.html">Track Your Fitness</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="singupContainer">
+            <div class="imageContainer">
+                <img src="images/basketball.jpg" alt="basketballPlayer">
+            </div>
+            <div class="signupBox">
+                <h1>Sign Up</h1>
+                <h3>Welcome, let's get going....</h3>
+                <form method="post" action="signupDet.php" onsubmit="return validateSignup()">
+                    <input type="text" id="name" name="name" class="inputField" placeholder="Name" required>
+                    <input type="email" id="emailID" name="emailID" class="inputField" placeholder="Email ID" required>
+                    <input type="password" id="password" name="password" class="inputField" placeholder="Password" required>
+                    <input type="tel" id="mobNo" name="mobNo" class="inputField" placeholder="Mobile Number" required>
+                    <input type="date" id="dob" name="dob" class="inputField" placeholder="Date of Birth" required>
+                    <div class="genderSelection">
+                        <label for="male">Male</label>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="female">Female</label>
+                        <input type="radio" id="female" name="gender" value="female" required>
+                    </div>
+                    <div class="genderSelection">
+                        <label for="user">User</label>
+                        <input type="radio" id="user" name="role" value="user" required>
+                        <label for="admin">Admin</label>
+                        <input type="radio" id="admin" name="role" value="admin" required>
+                    </div>
+                    <button type="submit" class="signupButton">Sign Up</button>
+                </form>
+
+                <p>Already have an account? <a href="LoginScreen.html">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-top">
+        <div class="footer-section">
+            <h3>Help</h3>
+            <a href="LoginScreen.html">Log In / Register</a>
+            <a href="privacy.html">Privacy Center</a>
+            <a href="support.html">Support</a>
+            <a href="developer.html">Developer / API</a>
+        </div>
+        <div class="footer-section">
+            <h3>About</h3>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="team.html">Join Our Team</a>
+        </div>
+        <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="https://www.facebook.com">
+                <img src="facebookLogo.svg" alt="Facebook Icon" class="social-icon"> Facebook
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="instagramLogo.svg" alt="Instagram Icon" class="social-icon"> Instagram
+            </a>
+            <a href="https://www.twitter.com">
+                <img src="twitterLogo.svg" alt="Twitter Icon" class="social-icon"> Twitter
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="linkidinLogo.svg" alt="LinkedIn Icon" class="social-icon"> LinkedIn
+            </a>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="left">
+            <div class="CompanyLogo"><img src="Heart.svg" alt="logo"></div>
+            <div class="rights">©2024 Fitness Tracker®, Inc. All rights reserved</div>
+        </div>
+        <div class="right">
+            <a href="privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+            <a href="terms.html" aria-label="Terms of Use">Terms of Use</a>
+            <a href="cookie.html" aria-label="Cookie Policy">Cookie Policy</a>
+        </div>
+    </footer>
+    <script>
+        function validateSignup() {
+            var name = document.getElementById('name');
+            var emailID = document.getElementById('emailID');
+            var password = document.getElementById('password');
+            var mobNo = document.getElementById('mobNo');
+            var dob = document.getElementById('dob');
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var role = document.querySelector('input[name="role"]:checked');
+        
+            name.style.borderBottom = '2px solid #ccc';
+            emailID.style.borderBottom = '2px solid #ccc';
+            password.style.borderBottom = '2px solid #ccc';
+            mobNo.style.borderBottom = '2px solid #ccc';
+            dob.style.borderBottom = '2px solid #ccc';
+        
+            var isValid = true;
+            var errorMessage = "";
+        
+            var namePattern = /^[a-zA-Z\s]+$/;
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var mobNoPattern = /^[6-9][0-9]{9}$/;
+        
+            // Name validation
+            if (name.value === "" || !namePattern.test(name.value)){
+                name.style.borderBottom = '2px solid red';
+                errorMessage += "Please enter a valid name (letters and spaces only).\n";
+                isValid = false;
+            }
+        
+            // Email validation
+            if (emailID.value === "" || !emailPattern.test(emailID.value)) {
+                emailID.style.borderBottom = '2px solid red';
+                errorMessage += "Please enter a valid email address.\n";
+                isValid = false;
+            }
+        
+            // Password validation (minimum 8 characters)
+            if (password.value === "") {
+                password.style.borderBottom = '2px solid red';
+                errorMessage += "Please enter your password.\n";
+                isValid = false;
+            } else if (password.value.length < 8) {
+                password.style.borderBottom = '2px solid red';
+                errorMessage += "Password must be at least 8 characters long.\n";
+                isValid = false;
+            }
+        
+            // Mobile number validation
+            if (mobNo.value === "" || !mobNoPattern.test(mobNo.value)) {
+                mobNo.style.borderBottom = '2px solid red';
+                errorMessage += "Please enter a valid 10-digit mobile number.\n";
+                isValid = false;
+            }
+        
+            if (dob.value === "") {
+                dob.style.borderBottom = '2px solid red';
+                errorMessage += "Please enter your date of birth.\n";
+                isValid = false;
+            } else {
+                var today = new Date();
+                var birthDate = new Date(dob.value);
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var monthDiff = today.getMonth() - birthDate.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                
+                if (age < 18) {
+                    dob.style.borderBottom = '2px solid red';
+                    errorMessage += "You must be at least 18 years old to sign up.\n";
+                    isValid = false;
+                }
+            }
+        
+            // Gender validation
+            if (!gender) {
+                errorMessage += "Please select your gender.\n";
+                isValid = false;
+            }
+        
+            // Role validation
+            if (!role) {
+                errorMessage += "Please select your role.\n";
+                isValid = false;
+            }
+        
+            // Final check
+            if (isValid) {
+                alert("Sign Up successful! Now please Login.");
+                return true; // Form submission proceeds
+            } else {
+                alert(errorMessage);
+                return false; // Form submission is prevented
+            }
+        }   
+    </script>
+</body>
+</html>

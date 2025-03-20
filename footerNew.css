@@ -1,0 +1,52 @@
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+.footer-section h3 {
+    color: #ff6b6b;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-section a:hover {
+    color: #ff6b6b;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #111;
+    color: white;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ff6b6b;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+footer a:hover {
+    color: white;
+}
+.CompanyLogo img {
+    height: 80px;
+    width: 100px;
+}
+.social-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}

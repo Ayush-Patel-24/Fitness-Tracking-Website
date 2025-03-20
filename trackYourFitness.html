@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Fitness</title>
+    <link rel="stylesheet" href="nev_bar.css">
+    <link rel="stylesheet" href="footerNew.css">
+    <style>
+        body {
+            background-color: #1e1e1e;
+            font-family: 'Arial', sans-serif;
+            color: rgba(234, 232, 232, 0.85);
+            margin: 0;
+        }
+        
+        .aboveTable h1, .calBodyFat h1, .fitnessAdvice h1{
+            color: white;
+            width: 85vw;
+            margin: auto;
+            padding: 50px; 
+            background-color: rgba(255, 107, 107, 0.529);
+            border-radius: 30px;
+        }
+
+        h2, p {
+            color: rgb(237, 83, 83);
+            padding-left: 2vw;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: #2b2b2b;
+            border-radius: 8px;
+        }
+        
+        th, td {
+            border: 1px solid #444;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        th {
+            background-color: rgba(237, 237, 237, 0.9);
+            color: black;
+            font-weight: bold;
+        }
+        
+        .calBMI {
+            color: #f5deb3;
+            margin-top: 10px;
+            text-align: center;
+            font-size: large;
+        }
+        
+        .calBMIButton {
+            color: #1e1e1e;
+            font-weight: 600;
+            background-color: #f5deb3;
+            border: none;
+            border-radius: 20px;
+            height: 40px;
+            width: 120px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .calBMIButton:hover {
+            background-color: rgb(237, 83, 83);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .result {
+            margin-top: 10px;
+            color: rgb(237, 83, 83);
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        input {
+            height: 40px;
+            width: 240px;
+            display: block;
+            margin: 1% auto;
+            background-color: #f5deb3;
+            border: none;
+            border-radius: 10px;
+            color: black;
+            padding: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .recommendation {
+            margin: 20px auto;
+            padding: 15px;
+            width: 80%;
+            border: 2px solid rgb(237, 83, 83);
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgb(237, 83, 83);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: none;
+            text-align: left;
+        }
+        .advice{
+            margin: 20px auto;
+            padding: 15px;
+            color: rgb(237, 83, 83);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            border: 2px solid rgb(237, 83, 83);
+            width: 80%;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .recommendation h3 {
+            color: wheat;
+        }
+        
+        .recommendation ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            list-style: disc;
+        }
+        
+        .recommendation li {
+            line-height: 1.6;
+        }
+
+        .calBodyFat { 
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid rgba(255, 107, 107, 0.529);
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .inputPar {
+            display: flex;
+            flex-direction: column; /* Stack input fields and radio buttons vertically */
+            align-items: center; 
+        }
+        
+        input {
+            height: 40px;
+            width: 240px;
+            display: block;
+            margin: 1% 0; 
+            background-color: wheat;
+            border-radius: 10px;
+            color: black;
+            border: 1px solid rgba(255, 107, 107, 0.529);
+        }
+        
+        .calBMIButton {
+            color: orange;
+            font-weight: 600;
+            background-color: wheat;
+            border-radius: 20px;
+            height: 50px; 
+            width: 150px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .calBMIButton:hover {
+            transform: scale(1.1);
+        }
+        
+      
+        input[type="radio"] {
+            margin: 0; 
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+        }
+        
+        
+        .calBodyFat label {
+            color: wheat;
+            margin: 10px 0;
+            cursor: pointer; 
+            display: flex;
+            align-items: center;
+        }
+        
+        input[type="radio"]:focus {
+            outline: none;
+        }
+        .fitnessAdvice2{
+            text-align: center;
+        }
+
+        .fitnessAdvice2 button{
+            justify-content: center;
+            align-items: center;
+            background-color: wheat;
+            cursor: pointer;
+            color: orange;
+            border-radius: 20px;
+            height: 50px; 
+            width: 150px;
+            margin-top: 2vh;
+            transition: all 0.3s ease;
+        }
+        .fitnessAdvice2 button:hover{
+            background-color: rgb(237, 83, 83);
+            color: white;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="Heart.svg" alt="">
+        </div>
+        <div class="name">
+            <h1>Fitness Tracker</h1>
+        </div>
+        <div class="element">
+            <ul>
+                <li><a href="Home.php">Home</a></li>
+                <li><a href="aboutUS.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="trackYourFitness.html">Track Your Fitness</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="aboveTable">
+            <h1>Body Mass Index (BMI)</h1>
+            <h2>What is BMI?</h2>
+            <p>Body mass index (BMI) is a medical screening tool that estimates body fat percentage by using an adult's weight and height. BMI can be calculated using metric or imperial (US) units. In metric units, the formula is weight (kilograms) divided by height squared (meters), or BMI = kg/m².</p>
+        </div>
+        <table>
+            <tr>
+                <th>BMI</th>
+                <th>Category</th>
+            </tr>
+            <tr>
+                <td>&lt;16</td>
+                <td>Severely Underweight</td>
+            </tr>
+            <tr>
+                <td>16-18.4</td>
+                <td>Underweight</td>
+            </tr>
+            <tr>
+                <td>18.5-24.9</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <td>25-29.9</td>
+                <td>Overweight</td>
+            </tr>
+            <tr>
+                <td>30-34.9</td>
+                <td>Moderately Obese</td>
+            </tr>
+            <tr>
+                <td>35-39.9</td>
+                <td>Severely Obese</td>
+            </tr>
+            <tr>
+                <td>&ge;40</td>
+                <td>Morbidly Obese</td>
+            </tr>
+        </table>
+        <div class="calBMI">
+            <p>Calculate your BMI here:</p>
+            <div class="inputPar">
+                <input type="number" id="height" min="1" placeholder="Height in cm">
+                <input type="number" id="weight" min="1" placeholder="Weight in kg">
+            </div>
+            <button class="calBMIButton" onclick="calculateBMI()">Calculate BMI</button>
+            <div class="result" id="bmiResult"></div>
+            <div class="recommendation" id="bmiRecommendation"></div> 
+        </div>
+    </div>
+
+    <div class="calBodyFat">
+        <h1>Body Fat Percentage(BFP)</h1>
+        <h2>What is BFP?</h2>
+        <div class="inputPar">
+            <p>Body Fat Percentage(BFP) is a more accurate way to measure health and disease risk than body mass index (BMI), which only considers overall weight. BMI can't differentiate between fat storage, lean body mass, and muscle mass.</p>
+            <p>Select your gender:</p>
+            <label>
+                <input type="radio" name="gender" value="male" checked>
+                Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female">
+                Female
+            </label>
+            <input type="number" id="waist" min="1" placeholder="Waist Circumference (inches)">
+            <input type="number" id="hip" min="1" placeholder="Hip Circumference (inches)">
+            <input type="number" id="neck" min="1" placeholder="Neck Circumference (inches)">
+            <input type="number" id="heightBF" min="1" placeholder="Height (inches)">
+            <button class="calBMIButton" onclick="calculateBodyFat()">Calculate</button>
+        </div>
+        <div class="result" id="bodyFatResult"></div>
+    </div>
+
+    <div class="fitnessAdvice">
+        <h1>Get a Random Fitness Advice</h1>
+        <div class="fitnessAdvice2">
+            <button id="get-advice" onclick="fetchFitnessAdvice()">Get Fitness Advice</button>
+            <div class = "advice" id="advice-container"></div>    
+        </div>
+    </div>
+    
+    <div class="footer-top">
+        <div class="footer-section">
+            <h3>Help</h3>
+            <a href="LoginScreen.html">Log In / Register</a>
+            <a href="privacy.html">Privacy Center</a>
+            <a href="support.html">Support</a>
+            <a href="developer.html">Developer / API</a>
+        </div>
+        <div class="footer-section">
+            <h3>About</h3>
+            <a href="contactUs.html">Contact Us</a>
+            <a href="team.html">Join Our Team</a>
+        </div>
+        <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="https://www.facebook.com">
+                <img src="facebookLogo.svg" alt="Facebook Icon" class="social-icon"> Facebook
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="instagramLogo.svg" alt="Instagram Icon" class="social-icon"> Instagram
+            </a>
+            <a href="https://www.twitter.com">
+                <img src="twitterLogo.svg" alt="Twitter Icon" class="social-icon"> Twitter
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="linkidinLogo.svg" alt="LinkedIn Icon" class="social-icon"> LinkedIn
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="left">
+            <div class="CompanyLogo"><img src="Heart.svg" alt="logo"></div>
+            <div class="rights">©2024 Fitness Tracker®, Inc. All rights reserved</div>
+        </div>
+        <div class="right">
+            <a href="privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+            <a href="terms.html" aria-label="Terms of Use">Terms of Use</a>
+            <a href="cookie.html" aria-label="Cookie Policy">Cookie Policy</a>
+        </div>
+    </footer>
+    <script>
+        function calculateBodyFat() {
+            var waist = parseFloat(document.getElementById('waist').value);
+            var hip = parseFloat(document.getElementById('hip').value);
+            var neck = parseFloat(document.getElementById('neck').value);
+            var height = parseFloat(document.getElementById('heightBF').value);
+            var gender = document.querySelector('input[name="gender"]:checked');
+        
+            if (!gender) {
+                document.getElementById('bodyFatResult').textContent = "Please select your gender.";
+                document.getElementById('bodyFatResult').style.color = "red";
+                return;
+            }
+
+            if (waist <= 0 || neck <= 0 || height <= 0 || (gender.value === 'female' && hip <= 0)) {
+                document.getElementById('bodyFatResult').textContent = "Please enter positive values for all measurements.";
+                document.getElementById('bodyFatResult').style.color = "red";
+                return;
+            }
+        
+            var bodyFatPercentage;
+        
+            if (gender.value === 'male') {
+                bodyFatPercentage = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(height) + 36.76;
+            } else { 
+                bodyFatPercentage = 163.205 * Math.log10(waist + hip - neck) - 97.684 * Math.log10(height) - 78.387;
+            }
+        
+            if (bodyFatPercentage < 0 || bodyFatPercentage > 100) {
+                document.getElementById('bodyFatResult').textContent = "Calculated Body Fat Percentage seems unreasonable.";
+                document.getElementById('bodyFatResult').style.color = "red";
+                return;
+            }
+        
+            document.getElementById('bodyFatResult').textContent = "Your Body Fat Percentage is: " + bodyFatPercentage.toFixed(2) + "%";
+        }
+        
+        
+        function calculateBMI() {
+            var height = document.getElementById('height').value;
+            var weight = document.getElementById('weight').value;
+
+            if (height <= 0 || weight <= 0) {
+                document.getElementById('bmiResult').textContent = "Please enter positive values for height and weight.";
+                document.getElementById('bmiResult').style.color = "red"; 
+                document.getElementById('bmiRecommendation').style.display = "none"; // Hide recommendations
+                return;
+            }
+
+            var heightInMeters = height / 100;
+            var bmi = weight / (heightInMeters * heightInMeters);
+            bmi = bmi.toFixed(2);
+            var resultText = "Your BMI is: " + bmi;
+            document.getElementById('bmiResult').textContent = resultText; 
+
+            var recommendationText = '';
+            if (bmi < 18.5) {
+                recommendationText = "<h3>Recommendations for Underweight Individuals:</h3>" +
+                    "<ul>" +
+                    "<li><strong>Increase Caloric Intake:</strong> Focus on calorie-dense foods such as nuts, seeds, avocados, and healthy oils.</li>" +
+                    "<li>Incorporate smoothies and shakes to add extra calories without feeling overly full.</li>" +
+                    "<li><strong>Balanced Diet:</strong> Include a variety of foods from all food groups: proteins, carbohydrates, and healthy fats.</li>" +
+                    "<li>Consider adding snacks like cheese, Greek yogurt, or protein bars between meals.</li>" +
+                    "<li><strong>Frequent Meals:</strong> Eat more often, aiming for five to six small meals throughout the day.</li>" +
+                    "</ul>";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                recommendationText = "<h3>Recommendations for Normal Weight Individuals:</h3>" +
+                    "<ul>" +
+                    "<li><strong>Maintain Your Weight:</strong> Continue with a balanced diet and regular physical activity.</li>" +
+                    "<li>Consider incorporating strength training to build muscle and maintain a healthy metabolism.</li>" +
+                    "<li><strong>Hydrate:</strong> Drink plenty of water and limit sugary drinks.</li>" +
+                    "<li>Keep an eye on portion sizes to avoid weight gain.</li>" +
+                    "<li><strong>Regular Check-ups:</strong> Stay proactive with your health through regular check-ups.</li>" +
+                    "</ul>";
+            }else{
+                recommendationText = "<h3>Recommendations for Overweight or Obese Individuals:</h3>" +
+                    "<ul>" +
+                    "<li><strong>Consult a Healthcare Provider:</strong> Discuss a personalized weight loss plan.</li>" +
+                    "<li>Focus on a balanced diet rich in fruits, vegetables, whole grains, and lean proteins.</li>" +
+                    "<li><strong>Regular Exercise:</strong> Aim for at least 150 minutes of moderate-intensity aerobic activity each week.</li>" +
+                    "<li>Consider incorporating more physical activity into your daily routine (e.g., walking or cycling).</li>" +
+                    "<li><strong>Set Realistic Goals:</strong> Aim for a slow and steady weight loss of 1-2 pounds per week.</li>" +
+                    "</ul>";
+            }
+            document.getElementById('bmiRecommendation').innerHTML = recommendationText;
+            document.getElementById('bmiRecommendation').style.display = "block";
+        }
+        function fetchFitnessAdvice() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "get_fitness_advice.php", true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+
+                    document.getElementById("advice-container").innerText = xhr.responseText;
+                } else {
+                    document.getElementById("advice-container").innerText = "Error fetching advice.";
+                }
+            };
+            xhr.send();
+        }
+        document.getElementById("get-advice").addEventListener("click", fetchFitnessAdvice);
+    </script>
+</body>
+</html>
